@@ -7,6 +7,7 @@ resource "aws_instance" "bastion" {
 
   tags = {
     Environment = "test"
+    yor_trace   = "b9ccf3dd-2ca4-418b-a1b1-3bfc8d084cb4"
   }
 }
 
@@ -21,5 +22,6 @@ resource "aws_s3_bucket" "disabled_versioned_bucket" {
 
   tags = {
     "CostCentre" : "CD0012"
+    yor_trace = "188089f7-4d19-4c7e-84be-4153300c3bbe"
   }
 }

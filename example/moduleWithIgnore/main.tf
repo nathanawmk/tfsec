@@ -1,6 +1,6 @@
 #tfsec:ignore:AWS052:exp:2021-02-02
 module "db" {
-  source = "terraform-aws-modules/rds/aws"
+  source  = "terraform-aws-modules/rds/aws"
   version = "~> 2.0"
 
   identifier = "demodb"
@@ -20,7 +20,10 @@ module "db" {
 }
 
 resource "aws_ssm_parameter" "pw" {
-  name = "pw"
-  type = "SecureString"
+  name  = "pw"
+  type  = "SecureString"
   value = "changeme"
+  tags = {
+    yor_trace = "692c1458-c959-488e-ac2c-46097b4bb7a9"
+  }
 }
