@@ -5,6 +5,9 @@ resource "aws_s3_bucket" "custom_module_bucket" {
   versioning {
     enabled = true
   }
+  tags = {
+    yor_trace = "0fb34223-a450-41b2-be1b-34e6b275a551"
+  }
 }
 
 variable "bucket_name" {

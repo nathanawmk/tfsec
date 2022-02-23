@@ -1,5 +1,5 @@
 module "db" {
-  source = "terraform-aws-modules/rds/aws"
+  source  = "terraform-aws-modules/rds/aws"
   version = "~> 2.0"
 
   identifier = "demodb"
@@ -19,7 +19,10 @@ module "db" {
 }
 
 resource "aws_ssm_parameter" "pw" {
-  name = "pw"
-  type = "SecureString"
+  name  = "pw"
+  type  = "SecureString"
   value = "changeme"
+  tags = {
+    yor_trace = "485ff5af-fe4d-4ba6-913e-0a78890c0ac9"
+  }
 }
